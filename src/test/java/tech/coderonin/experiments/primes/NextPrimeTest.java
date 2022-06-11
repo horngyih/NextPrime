@@ -17,7 +17,10 @@ public class NextPrimeTest {
 			new Object[]{ 3635, 3637, false },
 			new Object[]{ 3631, 3637, true },
 			new Object[]{ 3632, 3637, false },
-			new Object[]{ 4483, 4493, true }
+			new Object[]{ 4483, 4493, true },
+			new Object[]{ 6229, 6247, true },
+			new Object[]{ 6330, 6337, false },
+			new Object[]{ 7919, 7927, true }
 		);
 	}
 
@@ -38,13 +41,14 @@ public class NextPrimeTest {
 		boolean isPrime = NextPrime.isPrime(candidate);
 		long end = System.nanoTime();
 		System.out.printf( "Candidate %d is %s%n", candidate, (isPrime?"Prime":"Not Prime") );
-		System.out.printf( "Time elapsed %d%n", ( end - start ) );
+		System.out.printf( "Time elapsed %fs%n", (float)( end - start )/1000000000 );
 		assertEquals( "Should detect that the candidate is " + (this.expectPrime?"Prime":"Not Prime"), expectPrime, isPrime );
 
 		start = System.nanoTime();
 		int nextPrime = NextPrime.nextPrime(candidate);
 		System.out.printf( "Next prime after candidate is %d%n", NextPrime.nextPrime(candidate) );
 		end = System.nanoTime();
+		System.out.printf( "Time elapsed %fs%n", (float)(end - start)/1000000000 );
 		assertEquals( "Should compute the next prime after candidate", nextCandidate, nextPrime );
 
 	}

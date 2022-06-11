@@ -35,7 +35,6 @@ public class NextPrime{
 
 		int k_up = (6*k)+1;
 		int k_down = (6*k)-1;
-
 		if( isPrime(k_up) && isPrime(k_down) ){
 			if( k_up > k_down ){
 				return k_down;
@@ -46,9 +45,8 @@ public class NextPrime{
 			return k_up;
 		} else if( isPrime(k_down) ){
 			return k_down;
-		} else {
-			return nextPrime(k_down);
 		}
+		return -1;
 	}
 
 }

@@ -13,42 +13,11 @@ public class NextPrime{
 	}
 
 	public static int nextPrime( int n ){
-		if( isPrime(n) ){
-			return computeNextPrime(n);
-		} else {
-			int nextPrime = n;
-			do{
-				++nextPrime;
-			} while( !isPrime(nextPrime) );
-			return nextPrime;
-		}
-	}
-
-	public static int computeNextPrime( int n ){
-		int k = 0;
-		if( (n-1)%6 == 0 ){
-			k = (n-1)/6;
-		} else {
-			k = (n+1)/6;
-		}
-		k+=1;
-
-		int k_up = (6*k)+1;
-		int k_down = (6*k)-1;
-
-		if( isPrime(k_up) && isPrime(k_down) ){
-			if( k_up > k_down ){
-				return k_down;
-			} else {
-				return k_up;
-			}
-		} else if( isPrime(k_up) ){
-			return k_up;
-		} else if( isPrime(k_down) ){
-			return k_down;
-		} else {
-			return nextPrime(k_down);
-		}
+		int nextPrime = n;
+		do{
+			++nextPrime;
+		} while( !isPrime(nextPrime) );
+		return nextPrime;
 	}
 
 }

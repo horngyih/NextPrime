@@ -6,3 +6,14 @@ nextPrime(n) -> find that the provided n is Prime Number and return it, if not r
 
 The isPrime uses the simple [Primality Test](https://en.wikipedia.org/wiki/Primality_test) algorithm.
 
+The following is the provided algorithm in Javascript, this implementation adapted this into Java👎
+  function isPrime(num) {
+    if (num == 2 || num == 3)
+        return true;
+    if (num <= 1 || num % 2 == 0 || num % 3 == 0)
+        return false;  
+    for (let i = 5; i * i <= num ; i+=6)
+      if (num % i == 0 || num % (i + 2) == 0)
+        return false;
+	  return true;
+  }

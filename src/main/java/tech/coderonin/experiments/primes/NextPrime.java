@@ -13,6 +13,7 @@ public class NextPrime{
 	}
 
 	public static int nextPrime( int n ){
+        if( isPrime(n) ) return n;
 		int nextPrime = n;
 		do{
 			++nextPrime;

@@ -6,7 +6,7 @@ nextPrime(n) -> find that the provided n is Prime Number and return it, if not r
 
 The isPrime uses the simple [Primality Test](https://en.wikipedia.org/wiki/Primality_test) algorithm.
 
-The following is the provided algorithm in Javascript, this implementation adapted this into Java:-
+The following is the provided algorithm in Javascript, this implementation is adapted this into Java:-
 ```javascript
   function isPrime(num) {
     if (num == 2 || num == 3)
